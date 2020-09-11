@@ -1,0 +1,16 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - My personal Blog</title>
+        <link>https://leonkie.github.io/posts/</link>
+        <description>All Posts | My personal Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>leon@kiesgen.eu (Leon Kie)</managingEditor>
+            <webMaster>leon@kiesgen.eu (Leon Kie)</webMaster><lastBuildDate>Mon, 31 Aug 2020 23:38:56 &#43;0200</lastBuildDate><atom:link href="https://leonkie.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>InverterdPendelum</title>
+    <link>https://leonkie.github.io/inverted_pendolum/</link>
+    <pubDate>Mon, 31 Aug 2020 23:38:56 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://leonkie.github.io/inverted_pendolum/</guid>
+    <description><![CDATA[-- Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der Drosselklappe 1verändert um einen höheren Lustmassenstrom zu gewährleisten.
+Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen durch die den Input des Gaspedal aber weitaus komplexere Entscheidungen getroffen werden. Beim schnellem Drücken des Gaspedals2 muss wird vorzugsweise eher einen Gang mehr runtergeschaltet als bei langesamen Durchdrücken um maximales Drehmoment zu gewährleisten.]]></description>
+</item></channel>
+</rss>
