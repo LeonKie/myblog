@@ -6,8 +6,7 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>InverterdPendelum - My personal Blog</title><meta name="Description" content="This is my perosonal Blog. Here you can find my personal interests"><meta property="og:title" content="InverterdPendelum" />
-<meta property="og:description" content="-- Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der Drosselklappe 1verändert um einen höheren Lustmassenstrom zu gewährleisten.
-Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen durch die den Input des Gaspedal aber weitaus komplexere Entscheidungen getroffen werden. Beim schnellem Drücken des Gaspedals2 muss wird vorzugsweise eher einen Gang mehr runtergeschaltet als bei langesamen Durchdrücken um maximales Drehmoment zu gewährleisten." />
+<meta property="og:description" content="Introduction Building Parts List of used parts test nicht vergesse   Connecting Motor Driver Board Connecting Potentiometer Integation of Relay Control Algorithm LQR Controler Determine system state variables Code Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der Drosselklappe 1verändert um einen höheren Lustmassenstrom zu gewährleisten." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://leonkie.github.io/inverted_pendolum/" />
 <meta property="og:image" content="https://leonkie.github.io/logo.png"/>
@@ -17,8 +16,7 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
 <meta name="twitter:image" content="https://leonkie.github.io/logo.png"/>
 
 <meta name="twitter:title" content="InverterdPendelum"/>
-<meta name="twitter:description" content="-- Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der Drosselklappe 1verändert um einen höheren Lustmassenstrom zu gewährleisten.
-Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen durch die den Input des Gaspedal aber weitaus komplexere Entscheidungen getroffen werden. Beim schnellem Drücken des Gaspedals2 muss wird vorzugsweise eher einen Gang mehr runtergeschaltet als bei langesamen Durchdrücken um maximales Drehmoment zu gewährleisten."/>
+<meta name="twitter:description" content="Introduction Building Parts List of used parts test nicht vergesse   Connecting Motor Driver Board Connecting Potentiometer Integation of Relay Control Algorithm LQR Controler Determine system state variables Code Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der Drosselklappe 1verändert um einen höheren Lustmassenstrom zu gewährleisten."/>
 <meta name="application-name" content="LeonKie">
 <meta name="apple-mobile-web-app-title" content="LeonKie"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -31,7 +29,7 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/leonkie.github.io\/inverted_pendolum\/"
-        },"genre": "posts","keywords": "electronics, dc motor, L298n, lamp","wordcount":  165 ,
+        },"genre": "posts","keywords": "electronics, dc motor, L298n, lamp","wordcount":  187 ,
         "url": "https:\/\/leonkie.github.io\/inverted_pendolum\/","datePublished": "2020-08-31T23:38:56+02:00","dateModified": "2020-08-31T23:38:56+02:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -119,10 +117,10 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
 <main class="main">
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
-            <div class="toc-content" id="toc-content-auto"></div>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">InverterdPendelum</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Leon Kie</a></span>&nbsp;<span class="post-category">included in <a href="/categories/arduino/"><i class="far fa-folder fa-fw"></i>arduino</a>&nbsp;<a href="/categories/feedback-control-theory/"><i class="far fa-folder fa-fw"></i>feedback control theory</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-31">2020-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;165 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-31">2020-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;187 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
@@ -131,9 +129,20 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#building">Building</a>
       <ul>
-        <li><a href="#das-invertierte-pedel-is-instabil">Das invertierte Pedel is <code>INSTABIL</code></a></li>
+        <li><a href="#parts">Parts</a></li>
+        <li><a href="#connecting-motor-driver-board">Connecting Motor Driver Board</a></li>
+        <li><a href="#connecting-potentiometer">Connecting Potentiometer</a></li>
+        <li><a href="#integation-of-relay">Integation of Relay</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-algorithm">Control Algorithm</a>
+      <ul>
+        <li><a href="#lqr-controler">LQR Controler</a></li>
+        <li><a href="#determine-system-state-variables">Determine system state variables</a></li>
+        <li><a href="#code">Code</a></li>
       </ul>
     </li>
   </ul>
@@ -143,10 +152,28 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
   <iframe src="https://www.youtube-nocookie.com/embed/YQyPyLgG7x4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
 </div>
 
-<!-- <figure>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Cart-pendulum.svg/300px-Cart-pendulum.svg.png"/> 
-</figure>
- -->
+<h2 id="introduction">Introduction</h2>
+<h2 id="building">Building</h2>
+<h3 id="parts">Parts</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>List of used parts<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li>test</li>
+<li>nicht vergesse</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="connecting-motor-driver-board">Connecting Motor Driver Board</h3>
+<h3 id="connecting-potentiometer">Connecting Potentiometer</h3>
+<h3 id="integation-of-relay">Integation of Relay</h3>
+<h2 id="control-algorithm">Control Algorithm</h2>
+<h3 id="lqr-controler">LQR Controler</h3>
+<h3 id="determine-system-state-variables">Determine system state variables</h3>
+<h3 id="code">Code</h3>
 <p>Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der <a href="https://de.wikipedia.org/wiki/Drosselklappe_%28Motor%29" target="_blank" rel="noopener noreffer">Drosselklappe</a> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>verändert um einen höheren Lustmassenstrom zu gewährleisten.</p>
 <p>Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen durch die den Input des Gaspedal aber weitaus komplexere Entscheidungen getroffen werden. Beim schnellem Drücken des Gaspedals<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> muss wird vorzugsweise eher einen Gang mehr runtergeschaltet als bei langesamen Durchdrücken um maximales Drehmoment zu gewährleisten. Alle diese Regelungssystem sind meisten unsichtbar und je unerkennbare für die Benutzer desto besser wurde das Regierungssystem design. Das liegt daran dass die meisten Systeme Stabile sind. Wenn aber eine <a href="https://de.wikipedia.org/wiki/Regelstrecke" target="_blank" rel="noopener noreffer">Regelstrecke</a> instabil ist kommt das Potenzial heutiger Regler erst zum Vorschein.</p>
 <div class="details admonition tip open">
@@ -161,7 +188,6 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
 </div>
         </div>
     </div>
-<h3 id="das-invertierte-pedel-is-instabil">Das invertierte Pedel is <code>INSTABIL</code></h3>
 <figure>
     <img src="controlled-cart.gif"/> 
 </figure>
@@ -206,8 +232,6 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
-            </noscript><div id="gitalk" class="comment"></div><noscript>
-                Please enable JavaScript to view the comments powered by <a href="https://github.com/gitalk/gitalk"></a>Gitalk</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
@@ -220,5 +244,5 @@ Heutzutage in deiner Welt mit Automatikgetriebe und Spurhalteassistent müssen d
             </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
                 <i class="fas fa-comment fa-fw"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/gitalk/gitalk.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/gitalk/gitalk.min.js"></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{"gitalk":{"admin":[""],"clientID":"","clientSecret":"","id":"2020-08-31T23:38:56+02:00","owner":"","repo":"","title":"InverterdPendelum"}},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

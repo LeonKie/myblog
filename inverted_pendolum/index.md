@@ -3,7 +3,49 @@
 
 {{< youtube YQyPyLgG7x4 >}}
 
-<!-- {{< figure src= "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Cart-pendulum.svg/300px-Cart-pendulum.svg.png" >}} -->
+
+
+## Introduction
+
+## Building
+
+### Parts
+
+{{< admonition type=info title="List of used parts" >}}
+
+ - test
+ - nicht vergesse
+
+
+{{</admonition>}}
+
+### Connecting Motor Driver Board
+
+
+
+
+
+### Connecting Potentiometer
+
+
+
+
+
+### Integation of Relay 
+
+
+
+
+
+
+
+## Control Algorithm
+
+### LQR Controler
+
+### Determine system state variables
+
+### Code
 
 
 
@@ -18,9 +60,6 @@ Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das A
 - Das inverierte Pendel soll ersetzt werden mir einer moderen Lampe 💡
 {{</admonition>}}
 
-
-
-### Das invertierte Pedel is `INSTABIL`
 
 
 {{< figure src= "controlled-cart.gif" >}}
