@@ -81,13 +81,6 @@ $$\begin{bmatrix}   a & b \\\\   c & d \end{bmatrix}$$
 
 $$\begin{bmatrix} \dot{x} \\\\ \ddot{x} \\\\ \dot{\phi} \\\\ \ddot{\phi} \end{bmatrix} =\begin{bmatrix} 0 & 1 & 0 & 0 \\\\ 0 & \frac{-\left(I+m l^{2}\right) b}{I(M+m)+M m l^{2}} & \frac{m^{2} g l^{2}}{I(M+m)+M m l^{2}} & 0 \\\\ 0 & 0 & 0 & 1 \\\\ 0 & \frac{-m l b}{I(M+m)+M m l^{2}} & \frac{m g l(M+m)}{I(M+m)+M m l^{2}} & 0 \end{bmatrix}$$
 
-\begin{bmatrix}{c}
-x \\\\
-\dot{x} \\\\
-\phi \\\\
-\dot{\phi}
-\end{bmatrix}$$
-
 
 
 {{< admonition type=example title="List of Variables" open= false >}}
