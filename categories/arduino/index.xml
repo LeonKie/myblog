@@ -10,6 +10,7 @@
     <pubDate>Mon, 31 Aug 2020 23:38:56 &#43;0200</pubDate>
     <author>Author</author>
     <guid>https://leonkie.github.io/inverted_pendolum/</guid>
-    <description><![CDATA[Introduction Building Parts List of used parts test nicht vergesse   Connecting Motor Driver Board Connecting Potentiometer Integation of Relay Control Algorithm LQR Controler Determine system state variables Code Regelungssysteme gibt es zu genüge in heutigen Applikationen der Robotik. Das Auto verfügt zum Beispiel um zigtausende solcher geregelten Systeme. Früher wurde die durch die Aktuation des Gaspedal noch mechanisch 1:1 der Winkel der Drosselklappe 1verändert um einen höheren Lustmassenstrom zu gewährleisten.]]></description>
+    <description><![CDATA[Introduction The inverted pendulum is one of the most popular demonstrations in system control. It has been researched since the 1960 1and therefore a wide range of control systems have already been designed.
+This projects is a symbiosis between this still highly complex balancing problem and a potential usage as a design element. Combing a balancing cart 🚗 with a desk lamp 💡 brings the extra challenge of feeding a, in this case 230V, cable throw various mountings and controlling it using a ordinary relay.]]></description>
 </item></channel>
 </rss>
