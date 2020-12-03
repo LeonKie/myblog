@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>InverterdPendelum - My personal Blog</title><meta name="Description" content="This is my perosonal Blog. Here you can find my personal interests"><meta property="og:title" content="InverterdPendelum" />
+<meta property="og:description" content="Introduction The inverted pendulum is one of the most popular demonstrations in system control, has been studied since the 19601 and prime example at unis and other reseach institutes. However the inverted pendulum, which is nothing more than a pendulum that has the center of mass above the pivot point, yet has not particular use case. To change this once in for all, I build a inverted pendulum lamp, which can be used as a normal stylsh desk lanmp." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://leonkie.github.io/inverted_pendolum/" />
+<meta property="og:image" content="https://leonkie.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-08-31T23:38:56+02:00" />
+<meta property="article:modified_time" content="2020-08-31T23:38:56+02:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://leonkie.github.io/logo.png"/>
+
+<meta name="twitter:title" content="InverterdPendelum"/>
+<meta name="twitter:description" content="Introduction The inverted pendulum is one of the most popular demonstrations in system control, has been studied since the 19601 and prime example at unis and other reseach institutes. However the inverted pendulum, which is nothing more than a pendulum that has the center of mass above the pivot point, yet has not particular use case. To change this once in for all, I build a inverted pendulum lamp, which can be used as a normal stylsh desk lanmp."/>
+<meta name="application-name" content="LeonKie">
+<meta name="apple-mobile-web-app-title" content="LeonKie"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://leonkie.github.io/inverted_pendolum/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "InverterdPendelum",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/leonkie.github.io\/inverted_pendolum\/"
+        },"genre": "posts","keywords": "electronics, dc motor, L298n, lamp","wordcount":  1576 ,
+        "url": "https:\/\/leonkie.github.io\/inverted_pendolum\/","datePublished": "2020-08-31T23:38:56+02:00","dateModified": "2020-08-31T23:38:56+02:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Leon Kie"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="My personal Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/projekt.png"
+        data-srcset="/images/projekt.png, /images/projekt.png 1.5x, /images/projekt.png 2x"
+        data-sizes="auto"
+        alt="/images/projekt.png"
+        title="/images/projekt.png" />My Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="My personal Blog"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/projekt.png"
+        data-srcset="/images/projekt.png, /images/projekt.png 1.5x, /images/projekt.png 2x"
+        data-sizes="auto"
+        alt="/images/projekt.png"
+        title="/images/projekt.png" />My Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content always-active" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">InverterdPendelum</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Leon Kie</a></span>&nbsp;<span class="post-category">included in <a href="/categories/arduino/"><i class="far fa-folder fa-fw"></i>arduino</a>&nbsp;<a href="/categories/feedback-control-theory/"><i class="far fa-folder fa-fw"></i>feedback control theory</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-08-31">2020-08-31</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1576 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;8 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#building">Building</a>
+      <ul>
+        <li><a href="#components">Components</a></li>
+        <li><a href="#mechanical-setup">Mechanical Setup</a></li>
+        <li><a href="#connecting-motor-driver-board">Connecting Motor Driver Board</a></li>
+        <li><a href="#connecting-potentiometer">Connecting Potentiometer</a></li>
+        <li><a href="#integration-of-relay3">Integration of Relay</a></li>
+      </ul>
+    </li>
+    <li><a href="#control-algorithm">Control Algorithm</a>
+      <ul>
+        <li><a href="#mathematical-representation">Mathematical representation</a></li>
+        <li><a href="#lqr-controller">LQR Controller</a></li>
+        <li><a href="#determine-grains">Determine grains</a></li>
+        <li><a href="#dc-motor-system-identification">DC-Motor system identification</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclustion">Conclustion</a></li>
+    <li><a href="#code">Code</a></li>
+    <li><a href="#links">Links</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content">
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube-nocookie.com/embed/YQyPyLgG7x4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="introduction">Introduction</h2>
+<p>The inverted pendulum is one of the most popular demonstrations in system control, has been studied since the 1960<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> and prime example at unis and other reseach institutes. However the inverted pendulum, which is nothing more than a pendulum that has the center of mass above the pivot point, yet has not particular use case. To change this once in for all, I build a <strong>inverted pendulum lamp</strong>, which can be used as a normal stylsh desk lanmp. <em>(The main incentive however wasn&rsquo;t so heroic. Honestly! It sounded just like a nice project idea!)</em></p>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">This blog post will give you a step by step <strong>recreation guide</strong> and highlights the the design choices I made as well as introduce you to the implementation of the <strong>LQR Control Algorithm</strong> I used to balance the Lamp. I will also mention the resources that i used to speed up the programming part at the the end of the post!</div>
+        </div>
+    </div>
+<h2 id="building">Building</h2>
+<h3 id="components">Components</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>List of used parts<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><a href="https://www.ebay.de/itm/Arduino-UNO-komp-Board-ATmega328-CH340-Hochwertig/283648092280?ssPageName=STRK%3AMEBIDX%3AIT&amp;_trksid=p2057872.m2749.l2649" target="_blank" rel="noopener noreffer">📟 Arduino UNO</a></li>
+<li><a href="https://www.ebay.de/itm/L298N-Motortreiber-Endstufe-Schrittmotor-Driver-Arduino-Modul-Board-Raspberry-P/252909515166?ssPageName=STRK%3AMEBIDX%3AIT&amp;_trksid=p2057872.m2749.l2649" target="_blank" rel="noopener noreffer">⚡ L298N motor driver</a></li>
+<li><a href="https://www.reichelt.de/getriebemotor-39-6-mm-15-1-12-v-dc-gm39-6-15-12v-p159640.html" target="_blank" rel="noopener noreffer">⚙️ Geared DC-motor 39.6 mm, 15:1, 12 V DC</a></li>
+<li><a href="https://www.ebay.de/itm/12-5mm-300Rpm-6-Wires-CIRCUITS-2A-Capsule-Slip-Ring-Schleifring-240V-Dirigent-/232587637569" target="_blank" rel="noopener noreffer">🔌 Capsule Slip Ring AC 240V</a></li>
+<li><a href="https://www.ebay.de/itm/WDD35D4-5K-Conductive-Plastic-Angular-Displacement-Sensor-Angle-Sensor-New/263908784245?ssPageName=STRK%3AMEBIDX%3AIT&amp;_trksid=p2057872.m2749.l2649" target="_blank" rel="noopener noreffer">📏 Wdd35d4-5k Contious Angle Sensor</a></li>
+<li><a href="https://www.ebay.de/itm/1-Kanal-Relais-5V-230V-Raspberry-Pi-Modul-Channel-Relay-f%c3%bcr-Arduino-QITA/274108493382?ssPageName=STRK%3AMEBIDX%3AIT&amp;_trksid=p2057872.m2749.l2649" target="_blank" rel="noopener noreffer">🔌 1 Cannel Relay 5V/230V</a></li>
+<li><a href="https://www.amazon.de/gp/product/B07PC436ZD/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&amp;psc=1" target="_blank" rel="noopener noreffer">📏 Potentiometer 50k (linear)</a></li>
+<li><a href="https://www.amazon.de/DiCUNO-Vintage-Lampenfassung-Schraube-Gl%C3%BChbirne/dp/B07HRD6KGQ/ref=redir_mobile_desktop?ie=UTF8&amp;aaxitk=ZDRvDTdnV76iI1MniJFRIQ&amp;hsa_cr_id=1883828810402&amp;ref_=sbx_be_s_sparkle_mcd_asin_1" target="_blank" rel="noopener noreffer">💡 E27 Fassung</a></li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="mechanical-setup">Mechanical Setup</h3>
+<p>To accomplish this symbiosis between this still highly complex balancing problem and the potential usage as a design element, I first had to desing a balancing cart 🚗 with a pivoting E27 socket for the lamp 💡. This brings the extra challenge of feeding a, in this case 230V, cable throw various mountings and controlling it using a ordinary relay.</p>
+<figure>
+    <img src="IMG_20200830_182322.jpg"/> 
+</figure>
+
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Design-choices<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h3 id="-dv-motor-first-axel">⚙️ DV-Motor (first axel)</h3>
+<ul>
+<li>the L298N Motor Driver Module works up to 12V , without removing the jumper wire, therefore a 12V DV-Motor is a good choice for the setup</li>
+<li>a DC-Motor with 300-440 RPM or with a 15:1 gear ratio and a high enought torque, 10Ncm in my case (but that much might not be necessary) was sufficient for my setup</li>
+<li>❗ be carefull with the maximum current! The allowed Amps for the L298N Motor Driver Module is 2A (more information <a href="https://components101.com/modules/l293n-motor-driver-module#:~:text=Driver%20Chip%3A%20Double%20H%20Bridge,Logic%20Voltage%3A%205V" target="_blank" rel="noopener noreffer">here</a>)</li>
+</ul>
+<h3 id="-contious-angle-sensor-second-axel">📏 Contious Angle Sensor (second axel)</h3>
+<ul>
+<li>is used to monitor the position of the cart 🚗 relative to its starting position</li>
+<li>the angle sensor works like a normal potentiometer but allows for more that 360° turning angle.</li>
+<li>not the most reliable solution as it produced high noise in the zero orientation <br> =&gt; <strong>Quick-fix:</strong> use a capacitor as a low-pass filter between the ground and output voltage.</li>
+</ul>
+<h3 id="-arduino">📟 Arduino</h3>
+<ul>
+<li>the L298 has a 5V regulator and can be used as the power supply (see <a href="#connecting-motor-driver-board" rel="">connection diagram</a>)</li>
+<li>❗ dont mount any high current consumer like the lamp 💡 or the motor ⚙ to the 5V output of the board it is not made for such high currents.</li>
+</ul>
+<h3 id="-potentiometer-50k-linear">📏 Potentiometer 50k (linear)</h3>
+<ul>
+<li>used to detect the angel of the pendulum</li>
+<li>additionally used as a mount for the pendulum</li>
+</ul>
+<h3 id="-capsule-slip-ring-ac-240v">🔌 Capsule Slip Ring AC 240V</h3>
+<ul>
+<li>the lamp 💡 is powerd by a isolated electric circuit with 240V AC</li>
+<li>the slip ring feeds the power thought the rotational pivot point</li>
+<li>also used as mount for the pendelum</li>
+</ul>
+<h3 id="-relay">🔌 Relay</h3>
+<ul>
+<li>isolates the 12V DC and the 240V AC</li>
+<li>is triggerd by the arduino</li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="connecting-motor-driver-board">Connecting Motor Driver Board</h3>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://www.makerguides.com/wp-content/uploads/2019/05/l298n-motor-driver-with-stepper-motor-and-arduino-wiring-diagram-schematic-pinout.jpg"
+        data-srcset="https://www.makerguides.com/wp-content/uploads/2019/05/l298n-motor-driver-with-stepper-motor-and-arduino-wiring-diagram-schematic-pinout.jpg, https://www.makerguides.com/wp-content/uploads/2019/05/l298n-motor-driver-with-stepper-motor-and-arduino-wiring-diagram-schematic-pinout.jpg 1.5x, https://www.makerguides.com/wp-content/uploads/2019/05/l298n-motor-driver-with-stepper-motor-and-arduino-wiring-diagram-schematic-pinout.jpg 2x"
+        data-sizes="auto"
+        alt="https://www.makerguides.com/wp-content/uploads/2019/05/l298n-motor-driver-with-stepper-motor-and-arduino-wiring-diagram-schematic-pinout.jpg"
+        title="Stepper Motor with L298N and Arduino Tutorial (4 Examples)" /></p>
+<h3 id="connecting-potentiometer">Connecting Potentiometer</h3>
+<figure>
+    <img src="https://qph.fs.quoracdn.net/main-qimg-3b294f2e74073525723aacf5e7587b2b.webp"/> 
+</figure>
+
+<h3 id="integration-of-relay3">Integration of Relay<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></h3>
+<figure>
+    <img src="https://diyi0t.com/wp-content/uploads/2020/02/Relais-Module-Arduino-Uno-World_Steckplatine-1536x989.png"/> <figcaption>
+            <h4>Simple introduction to connect the relay to the arduino </h4>
+        </figcaption>
+</figure>
+
+<h2 id="control-algorithm">Control Algorithm</h2>
+<p>In the following section I will give a brief introduction to the theory of the LQR Controller and provide you with my recommended resources which help you determine the coefficients of the feedback regulator!</p>
+<h3 id="mathematical-representation">Mathematical representation</h3>
+<figure>
+    <img src="http://ctms.engin.umich.edu/CTMS/Content/InvertedPendulum/System/Modeling/figures/pendulum.png"/> 
+</figure>
+
+<p>The simplified system consists of a inverted pendulum which is connected to a motorized card. Without further inspection we can   recognize that we are looking at a unstable system. If the cart is not moved it is nearly impossible to balance the pendulum in the upright position. The objective is it now to design a feedback controller which accelerates the carte enough so that the angle $ \phi $ of the pendulum is close to 180°.</p>
+<p>However we first have to define the nonlinear model:</p>
+<figure>
+    <img src="https://ctms.engin.umich.edu/CTMS/Content/InvertedPendulum/System/Modeling/html/InvertedPendulum_SystemModeling_eq14127640478467589374.png"/> 
+</figure>
+
+<figure>
+    <img src="https://ctms.engin.umich.edu/CTMS/Content/InvertedPendulum/System/Modeling/html/InvertedPendulum_SystemModeling_eq13622041353118727580.png"/> 
+</figure>
+
+<div class="details admonition example">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>List of Variables<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ul>
+<li><em>M</em>			 	mass of the cart</li>
+<li><em>m</em>				mass of pendulum</li>
+<li><em>b</em>				coefficient of friction for cart</li>
+<li><em>l</em>				length to pendulum center of mass</li>
+<li><em>I</em>				mass moment of inertia of the pendulum</li>
+<li><em>F</em>				force applied to the cart</li>
+<li><em>x</em>				cart position coordinate</li>
+<li><em>$\theta$</em> pendulum angle from vertical (down)</li>
+<li><em>u</em>       (input) here equivalent to the Force <em>F</em></li>
+</ul>
+</div>
+        </div>
+    </div>
+<h3 id="lqr-controller">LQR Controller</h3>
+<h3 id="determine-grains">Determine grains</h3>
+<p>The script to determine the gains for the LQR Controller can be found <a href="https://github.com/zjor/inverted-pendulum/blob/master/dc-motor/pendulum_lqr_control.py" target="_blank" rel="noopener noreffer">here</a>!</p>
+<h3 id="dc-motor-system-identification">DC-Motor system identification</h3>
+<p>The LQR Controller takes as a input the Force <em>F</em> of the DC-Motor. Therefore the next step is to find the undelying DC-Motor model and estimate the corresponding system parameters. Then the arduino is able to change the speed of the engine using the PWM signal.</p>
+<p>We can model a standard DC-Motor using the following equation:
+$$
+\frac{d w}{d t}\left(J+m r^{2}\right)+w\left(B+\frac{k^{2}}{R}\right)=\frac{k U}{R}
+$$</p>
+<p>Simplifying this further:</p>
+<figure>
+    <img src="https://hackster.imgix.net/uploads/attachments/1020507/codecogseqn_vWvU4P629o.png?auto=compress%2Cformat&amp;w=680&amp;h=510&amp;fit=max"/> 
+</figure>
+
+<p>To determine the parameters a,b,c we can record several velocity curves with different input voltages. Using the following plot and theses scripts  [<a href="https://github.com/zjor/inverted-pendulum/blob/master/dc-motor/dc_motor_lqr_control.py" target="_blank" rel="noopener noreffer">dc_motor_lqr_control.py</a>,<a href="https://github.com/zjor/inverted-pendulum/blob/master/dc-motor/estimate_params.py" target="_blank" rel="noopener noreffer">estimate_params.py</a>] we can now find the exact model parameters!</p>
+<figure>
+    <img src="Engine-estimation.png"/> 
+</figure>
+
+<p><em>Credits to zjor for creating the scripts<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></em></p>
+<h2 id="conclustion">Conclustion</h2>
+<h2 id="code">Code</h2>
+<p>The code is based on a existing arduino project<sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span><span class="lnt">124
+</span><span class="lnt">125
+</span><span class="lnt">126
+</span><span class="lnt">127
+</span><span class="lnt">128
+</span><span class="lnt">129
+</span><span class="lnt">130
+</span><span class="lnt">131
+</span><span class="lnt">132
+</span><span class="lnt">133
+</span><span class="lnt">134
+</span><span class="lnt">135
+</span><span class="lnt">136
+</span><span class="lnt">137
+</span><span class="lnt">138
+</span><span class="lnt">139
+</span><span class="lnt">140
+</span><span class="lnt">141
+</span><span class="lnt">142
+</span><span class="lnt">143
+</span><span class="lnt">144
+</span><span class="lnt">145
+</span><span class="lnt">146
+</span><span class="lnt">147
+</span><span class="lnt">148
+</span><span class="lnt">149
+</span><span class="lnt">150
+</span><span class="lnt">151
+</span><span class="lnt">152
+</span><span class="lnt">153
+</span><span class="lnt">154
+</span><span class="lnt">155
+</span><span class="lnt">156
+</span><span class="lnt">157
+</span><span class="lnt">158
+</span><span class="lnt">159
+</span><span class="lnt">160
+</span><span class="lnt">161
+</span><span class="lnt">162
+</span><span class="lnt">163
+</span><span class="lnt">164
+</span><span class="lnt">165
+</span><span class="lnt">166
+</span><span class="lnt">167
+</span><span class="lnt">168
+</span><span class="lnt">169
+</span><span class="lnt">170
+</span><span class="lnt">171
+</span><span class="lnt">172
+</span><span class="lnt">173
+</span><span class="lnt">174
+</span><span class="lnt">175
+</span><span class="lnt">176
+</span><span class="lnt">177
+</span><span class="lnt">178
+</span><span class="lnt">179
+</span><span class="lnt">180
+</span><span class="lnt">181
+</span><span class="lnt">182
+</span><span class="lnt">183
+</span><span class="lnt">184
+</span><span class="lnt">185
+</span><span class="lnt">186
+</span><span class="lnt">187
+</span><span class="lnt">188
+</span><span class="lnt">189
+</span><span class="lnt">190
+</span><span class="lnt">191
+</span><span class="lnt">192
+</span><span class="lnt">193
+</span><span class="lnt">194
+</span><span class="lnt">195
+</span><span class="lnt">196
+</span><span class="lnt">197
+</span><span class="lnt">198
+</span><span class="lnt">199
+</span><span class="lnt">200
+</span><span class="lnt">201
+</span><span class="lnt">202
+</span><span class="lnt">203
+</span><span class="lnt">204
+</span><span class="lnt">205
+</span><span class="lnt">206
+</span><span class="lnt">207
+</span><span class="lnt">208
+</span><span class="lnt">209
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-arduino" data-lang="arduino"><span class="cp">#define A 9   
+</span><span class="cp">#define B 1.0 
+</span><span class="cp">#define C 2.1 
+</span><span class="cp"></span>
+<span class="cp">#define Kth 61.20847945 
+</span><span class="cp">#define Kw  10.42165907
+</span><span class="cp">#define Kx  16.2303454
+</span><span class="cp">#define Kv  13.43669139 
+</span><span class="cp"></span>
+<span class="cp">#define Ki  0
+</span><span class="cp">#define PI 3.1415926535897932384626433832795
+</span><span class="cp"></span>
+
+<span class="c1">//define pins
+</span><span class="c1"></span><span class="kt">int</span> <span class="n">speed</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">front</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">back</span>  <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span> <span class="n">lamp</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
+
+
+<span class="c1">//define constans
+</span><span class="c1"></span><span class="kt">float</span> <span class="n">wheelCirc</span> <span class="o">=</span> <span class="mf">141.37</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">THETA_THRESHOLD</span> <span class="o">=</span> <span class="kc">PI</span> <span class="o">/</span> <span class="mi">8</span><span class="p">;</span>
+
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">now</span> <span class="o">=</span> <span class="mi">0L</span><span class="p">;</span>
+<span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">lastTimeMicros</span> <span class="o">=</span> <span class="mi">0L</span><span class="p">;</span>
+
+
+<span class="c1">//init States
+</span><span class="c1"></span><span class="kt">float</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">d_x</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">phi</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">d_phi</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">phi_sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+
+<span class="c1">//usefull variables
+</span><span class="c1"></span><span class="kt">float</span> <span class="n">pos_last1</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">pos_last2</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">pos_last3</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">pos_last4</span><span class="p">;</span>
+<span class="kt">float</span> <span class="n">last_phi</span><span class="p">;</span>
+
+<span class="kt">float</span> <span class="n">control</span><span class="p">,</span> <span class="n">u</span><span class="p">,</span> <span class="n">dt</span> <span class="p">,</span> <span class="n">v_soll</span><span class="p">;</span>
+
+
+<span class="c1">// the setup routine runs once when you press reset:
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+  <span class="c1">// initialize serial communication at 9600 bits per second:
+</span><span class="c1"></span>  <span class="nc">Serial</span><span class="p">.</span><span class="nf">begin</span><span class="p">(</span><span class="mi">9600</span><span class="p">);</span>
+  <span class="nf">pinMode</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+  <span class="nf">pinMode</span><span class="p">(</span><span class="n">front</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+  <span class="nf">pinMode</span><span class="p">(</span><span class="n">back</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+  <span class="nf">pinMode</span><span class="p">(</span><span class="n">lamp</span><span class="p">,</span> <span class="kc">OUTPUT</span><span class="p">);</span>
+  <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">lamp</span><span class="p">,</span><span class="kc">HIGH</span><span class="p">);</span>
+  <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">front</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+  <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">back</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+  
+  <span class="n">pos_last1</span><span class="o">=</span> <span class="n">mapf</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A1</span><span class="p">),</span><span class="mi">0</span><span class="p">,</span><span class="mi">1023</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">wheelCirc</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span><span class="p">;</span>
+  <span class="n">pos_last2</span><span class="o">=</span><span class="n">pos_last1</span><span class="p">;</span>
+  <span class="n">pos_last3</span><span class="o">=</span><span class="n">pos_last1</span><span class="p">;</span>
+  <span class="n">pos_last4</span><span class="o">=</span><span class="n">pos_last1</span><span class="p">;</span>
+  <span class="n">last_phi</span><span class="o">=</span> <span class="n">mapf</span><span class="p">(</span><span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">)</span><span class="o">-</span><span class="mi">512</span><span class="o">+</span><span class="mi">4</span> <span class="p">,</span> <span class="o">-</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="kc">PI</span> <span class="p">,</span><span class="kc">PI</span> <span class="p">);</span>
+  <span class="n">lastTimeMicros</span> <span class="o">=</span> <span class="mi">0L</span><span class="p">;</span>
+  
+  <span class="c1">//Debugging
+</span><span class="c1"></span>
+  <span class="c1">//Serial.print(&#34;x&#34;);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(&#34;dx&#34;);Serial.println(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(&#34;Kv*d_x&#34;);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(&#34;Kth*phi&#34;);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(&#34;Kw*d_phi&#34;);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(&#34;control&#34;);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(&#34;u&#34;);Serial.println(&#34;\t&#34;);
+</span><span class="c1"></span><span class="p">}</span>
+
+
+<span class="kt">float</span> <span class="nf">mapf</span><span class="p">(</span><span class="kt">float</span> <span class="n">x</span><span class="p">,</span> <span class="kt">float</span> <span class="n">in_min</span><span class="p">,</span> <span class="kt">float</span> <span class="n">in_max</span><span class="p">,</span> <span class="kt">float</span> <span class="n">out_min</span><span class="p">,</span> <span class="kt">float</span> <span class="n">out_max</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">out_max</span> <span class="o">-</span> <span class="n">out_min</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">in_max</span> <span class="o">-</span> <span class="n">in_min</span><span class="p">)</span> <span class="o">+</span> <span class="n">out_min</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="kt">void</span> <span class="nf">driveMotor</span><span class="p">(</span><span class="kt">float</span> <span class="n">pwm_out</span><span class="p">){</span>
+  <span class="nf">analogWrite</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">pwm_out</span><span class="p">));</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">pwm_out</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">front</span><span class="p">,</span> <span class="kc">HIGH</span><span class="p">);</span>
+      <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">back</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">pwm_out</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">front</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+      <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">back</span><span class="p">,</span> <span class="kc">HIGH</span><span class="p">);</span>
+    <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+      <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">front</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+      <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">back</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+      
+    <span class="p">}</span>
+  
+<span class="p">}</span>
+
+
+<span class="kt">boolean</span> <span class="nf">isControllable</span><span class="p">(</span><span class="kt">float</span> <span class="n">phi</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">THETA_THRESHOLD</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">float</span> <span class="nf">saturate</span><span class="p">(</span><span class="kt">float</span> <span class="n">v</span><span class="p">,</span> <span class="kt">float</span> <span class="n">maxValue</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nf">fabs</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">maxValue</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="o">?</span> <span class="nl">maxValue</span> <span class="p">:</span> <span class="o">-</span><span class="n">maxValue</span><span class="p">;</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="kt">float</span> <span class="nf">derivative</span><span class="p">(</span><span class="kt">float</span> <span class="n">x_new</span><span class="p">,</span> <span class="kt">float</span> <span class="n">x_old</span><span class="p">,</span> <span class="kt">float</span> <span class="n">dt</span><span class="p">){</span>
+  
+  <span class="kt">float</span> <span class="n">d_temp</span><span class="o">=</span> <span class="n">x_new</span> <span class="o">-</span> <span class="n">x_old</span><span class="p">;</span>
+  <span class="kt">float</span> <span class="n">d_pos</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nf">fabs</span><span class="p">(</span><span class="n">d_temp</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">d_temp</span><span class="o">+</span><span class="n">wheelCirc</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="k">and</span> <span class="p">(</span><span class="nf">fabs</span><span class="p">(</span><span class="n">d_temp</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">d_temp</span><span class="o">-</span><span class="n">wheelCirc</span><span class="o">/</span><span class="mi">1000</span><span class="p">))){</span>
+    <span class="n">d_pos</span><span class="o">=</span> <span class="n">d_temp</span><span class="p">;</span>
+  <span class="p">}</span><span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="nf">fabs</span><span class="p">(</span><span class="n">d_temp</span><span class="o">+</span><span class="n">wheelCirc</span><span class="o">/</span><span class="mi">1000</span><span class="p">)</span> <span class="o">&lt;</span> <span class="nf">fabs</span><span class="p">(</span><span class="n">d_temp</span><span class="o">-</span><span class="n">wheelCirc</span><span class="o">/</span><span class="mi">1000</span><span class="p">)){</span>
+    <span class="n">d_pos</span><span class="o">=</span> <span class="p">(</span><span class="n">d_temp</span><span class="o">+</span><span class="n">wheelCirc</span><span class="o">/</span><span class="mi">1000</span><span class="p">);</span>
+  <span class="p">}</span><span class="k">else</span> <span class="p">{</span>
+    <span class="n">d_pos</span><span class="o">=</span> <span class="p">(</span><span class="n">d_temp</span><span class="o">-</span><span class="n">wheelCirc</span><span class="o">/</span><span class="mi">1000</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+  <span class="k">if</span> <span class="p">(</span><span class="nf">fabs</span><span class="p">(</span><span class="n">d_pos</span><span class="o">/</span><span class="n">dt</span><span class="p">)</span><span class="o">&gt;</span><span class="mf">1.1</span><span class="p">){</span>
+    <span class="n">d_pos</span><span class="o">=</span> <span class="o">-</span><span class="n">d_x</span><span class="o">*</span><span class="n">dt</span><span class="p">;</span>
+  <span class="p">}</span> 
+  
+  <span class="k">return</span> <span class="o">-</span> <span class="n">d_pos</span><span class="o">/</span><span class="n">dt</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">updateStates</span><span class="p">(</span><span class="kt">float</span> <span class="n">dt</span><span class="p">){</span>
+  
+
+  <span class="c1">//read sensor input (Angle of wheel)
+</span><span class="c1"></span>  <span class="kt">float</span> <span class="n">sensor_x</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">A1</span><span class="p">);</span>
+  <span class="kt">float</span> <span class="n">pos_new</span> <span class="o">=</span><span class="n">mapf</span><span class="p">(</span><span class="n">sensor_x</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1023</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="n">wheelCirc</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span><span class="p">;</span>
+
+  <span class="c1">//smoothing the signal input 
+</span><span class="c1"></span>  <span class="kt">float</span> <span class="n">pos_avg</span><span class="o">=</span> <span class="p">(</span><span class="n">pos_last1</span><span class="o">+</span><span class="n">pos_last2</span><span class="o">+</span><span class="n">pos_last3</span><span class="o">+</span><span class="n">pos_last4</span><span class="p">)</span><span class="o">/</span><span class="mi">4</span><span class="p">;</span> 
+  <span class="kt">float</span> <span class="n">d_x_2</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">pos_new</span><span class="p">,</span> <span class="n">pos_last2</span><span class="p">,</span><span class="mi">2</span><span class="o">*</span><span class="n">dt</span><span class="p">);</span>
+  <span class="kt">float</span> <span class="n">d_x_3</span> <span class="o">=</span> <span class="n">derivative</span><span class="p">(</span><span class="n">pos_new</span><span class="p">,</span> <span class="n">pos_last3</span><span class="p">,</span><span class="mi">3</span><span class="o">*</span><span class="n">dt</span><span class="p">);</span>
+  <span class="n">d_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">d_x_2</span><span class="o">+</span><span class="n">d_x_3</span><span class="p">)</span><span class="o">/</span><span class="mi">2</span><span class="p">;</span>
+  
+  <span class="c1">//update state variables
+</span><span class="c1"></span>  <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">dt</span><span class="o">*</span><span class="n">d_x</span><span class="p">;</span>
+  <span class="n">pos_last4</span><span class="o">=</span><span class="n">pos_last3</span><span class="p">;</span>
+  <span class="n">pos_last3</span><span class="o">=</span><span class="n">pos_last2</span><span class="p">;</span>
+  <span class="n">pos_last2</span><span class="o">=</span><span class="n">pos_last1</span><span class="p">;</span>
+  <span class="n">pos_last1</span><span class="o">=</span><span class="n">pos_new</span><span class="p">;</span>
+  
+  <span class="c1">//read sensor phi
+</span><span class="c1"></span>  <span class="kt">float</span> <span class="n">sensor_phi</span> <span class="o">=</span> <span class="nf">analogRead</span><span class="p">(</span><span class="n">A0</span><span class="p">)</span> <span class="o">-</span> <span class="mi">512</span><span class="p">;</span>
+  <span class="n">phi</span> <span class="o">=</span> <span class="n">mapf</span><span class="p">(</span><span class="n">sensor_phi</span><span class="o">+</span><span class="mi">8</span> <span class="p">,</span> <span class="o">-</span><span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="o">-</span><span class="kc">PI</span><span class="p">,</span> <span class="kc">PI</span> <span class="p">);</span> <span class="c1">// map sensor input to correct mean an variance 
+</span><span class="c1"></span>  
+
+  <span class="n">d_phi</span><span class="o">=</span><span class="p">(</span><span class="n">phi</span><span class="o">-</span><span class="n">last_phi</span><span class="p">)</span><span class="o">/</span><span class="n">dt</span><span class="p">;</span>
+  <span class="n">last_phi</span><span class="o">=</span> <span class="n">phi</span><span class="p">;</span>
+  
+  <span class="n">phi_sum</span><span class="o">=</span><span class="n">phi_sum</span><span class="o">+</span><span class="n">dt</span><span class="o">*</span><span class="n">phi</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">isControllable</span><span class="p">(</span><span class="n">phi</span><span class="p">)){</span>
+    <span class="n">phi_sum</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span>
+  
+  <span class="c1">//Debugging
+</span><span class="c1"></span>
+  <span class="c1">//Serial.print(sensor_x, 4);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(sensor_x, 4);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(pos_new, 4);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(d_x*1000, 4);Serial.println(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(d_x_2*1000, 4);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(d_x_3*1000, 4);Serial.println(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(d_x_4*1000, 4);Serial.println(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(phi, 4);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>  <span class="c1">//Serial.print(d_phi, 4);Serial.print(&#34;\t&#34;);
+</span><span class="c1"></span>
+<span class="p">}</span>
+
+<span class="c1">// the loop routine runs over and over again forever:
+</span><span class="c1"></span><span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="n">now</span> <span class="o">=</span> <span class="nf">micros</span><span class="p">();</span>
+  <span class="n">dt</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.0</span><span class="o">*</span><span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">lastTimeMicros</span><span class="p">))</span><span class="o">/</span> <span class="mi">1000000</span><span class="p">;</span>
+  <span class="n">updateStates</span><span class="p">(</span><span class="n">dt</span><span class="p">);</span>
+  
+  
+  
+  
+  <span class="k">if</span> <span class="p">(</span><span class="n">isControllable</span><span class="p">(</span><span class="n">phi</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">lamp</span><span class="p">,</span> <span class="kc">LOW</span><span class="p">);</span>
+    
+    <span class="n">control</span> <span class="o">=</span> <span class="p">(</span><span class="n">Kx</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">Kv</span> <span class="o">*</span> <span class="n">d_x</span> <span class="o">+</span> <span class="n">Kth</span> <span class="o">*</span> <span class="n">phi</span> <span class="o">+</span> <span class="n">Kw</span> <span class="o">*</span> <span class="n">d_phi</span><span class="p">);</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="p">(</span><span class="n">control</span> <span class="o">+</span> <span class="n">A</span> <span class="o">*</span> <span class="n">d_x</span> <span class="o">+</span> <span class="nf">copysignf</span><span class="p">(</span><span class="n">C</span><span class="p">,</span> <span class="n">d_x</span><span class="p">))</span> <span class="o">/</span> <span class="n">B</span><span class="p">;</span>
+    <span class="n">u</span> <span class="o">=</span> <span class="mf">255.0</span> <span class="o">*</span> <span class="n">u</span> <span class="o">/</span> <span class="mi">12</span><span class="p">;</span>
+    
+    <span class="n">v_soll</span> <span class="o">=</span> <span class="n">saturate</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="mi">254</span><span class="p">);</span>
+    <span class="n">driveMotor</span><span class="p">(</span><span class="n">v_soll</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">v_soll</span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">driveMotor</span><span class="p">(</span><span class="n">v_soll</span><span class="p">);</span>
+    <span class="nf">digitalWrite</span><span class="p">(</span><span class="n">lamp</span><span class="p">,</span> <span class="kc">HIGH</span><span class="p">);</span>
+  <span class="p">}</span>
+  
+
+
+
+  <span class="n">lastTimeMicros</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+  <span class="nf">delay</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>        <span class="c1">// delay in between reads for stability
+</span><span class="c1"></span><span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><figure>
+    <img src="controlled-cart.gif"/> 
+</figure>
+
+<h2 id="links">Links</h2>
+<section class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1" role="doc-endnote">
+<p><a href="http://web.mit.edu/klund/www/papers/Roberge1960.pdf">http://web.mit.edu/klund/www/papers/Roberge1960.pdf</a> <a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2" role="doc-endnote">
+<p><a href="https://diyi0t.com/relay-tutorial-for-arduino-and-esp8266/">https://diyi0t.com/relay-tutorial-for-arduino-and-esp8266/</a> <a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3" role="doc-endnote">
+<p><a href="https://create.arduino.cc/projecthub/zjor/inverted-pendulum-on-a-cart-199d6f">https://create.arduino.cc/projecthub/zjor/inverted-pendulum-on-a-cart-199d6f</a> <a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</section>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-08-31</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/inverted_pendolum/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://leonkie.github.io/inverted_pendolum/" data-title="InverterdPendelum" data-via="leon__kie" data-hashtags="electronics,dc motor,L298n,lamp"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://leonkie.github.io/inverted_pendolum/" data-title="InverterdPendelum"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/electronics/">electronics</a>,&nbsp;<a href="/tags/dc-motor/">dc motor</a>,&nbsp;<a href="/tags/l298n/">L298n</a>,&nbsp;<a href="/tags/lamp/">lamp</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+<div id="comments"><div id="commento"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.74.3">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Leon Kie</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":10},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"$$","right":"$$"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"},{"display":false,"left":"$","right":"$"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

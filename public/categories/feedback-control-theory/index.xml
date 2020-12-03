@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>feedback control theory - Category - My personal Blog</title>
+        <link>https://leonkie.github.io/categories/feedback-control-theory/</link>
+        <description>feedback control theory - Category - My personal Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>leon@kiesgen.eu (Leon Kie)</managingEditor>
+            <webMaster>leon@kiesgen.eu (Leon Kie)</webMaster><lastBuildDate>Mon, 31 Aug 2020 23:38:56 &#43;0200</lastBuildDate><atom:link href="https://leonkie.github.io/categories/feedback-control-theory/" rel="self" type="application/rss+xml" /><item>
+    <title>InverterdPendelum</title>
+    <link>https://leonkie.github.io/inverted_pendolum/</link>
+    <pubDate>Mon, 31 Aug 2020 23:38:56 &#43;0200</pubDate>
+    <author>Author</author>
+    <guid>https://leonkie.github.io/inverted_pendolum/</guid>
+    <description><![CDATA[Introduction The inverted pendulum is one of the most popular demonstrations in system control, has been studied since the 19601 and prime example at unis and other reseach institutes. However the inverted pendulum, which is nothing more than a pendulum that has the center of mass above the pivot point, yet has not particular use case. To change this once in for all, I build a inverted pendulum lamp, which can be used as a normal stylsh desk lanmp.]]></description>
+</item></channel>
+</rss>
